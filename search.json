@@ -4,7 +4,7 @@
       "title"    : "Sample Post",
       "category" : "",
       "tags"     : "sample post",
-      "url"      : "http://aronbordin.com/neo-hpstr-jekyll-theme/intro/sample-post/",
+      "url"      : "https://sebastian3495.github.io/intro/sample-post/",
       "date"     : "2016-12-02 00:00:00 -0500"
     } ,
   
@@ -12,7 +12,7 @@
       "title"    : "Syntax Highlighting Post",
       "category" : "",
       "tags"     : "sample post, code, highlighting",
-      "url"      : "http://aronbordin.com/neo-hpstr-jekyll-theme/intro/code-highlighting-post/",
+      "url"      : "https://sebastian3495.github.io/intro/code-highlighting-post/",
       "date"     : "2016-12-01 00:00:00 -0500"
     } ,
   
@@ -20,7 +20,7 @@
       "title"    : "Dark Post",
       "category" : "",
       "tags"     : "sample post",
-      "url"      : "http://aronbordin.com/neo-hpstr-jekyll-theme/dark-post/",
+      "url"      : "https://sebastian3495.github.io/dark-post/",
       "date"     : "2016-11-30 00:00:00 -0500"
     } ,
   
@@ -28,7 +28,7 @@
       "title"    : "Post with a Background Image",
       "category" : "",
       "tags"     : "sample post",
-      "url"      : "http://aronbordin.com/neo-hpstr-jekyll-theme/image/background-image/",
+      "url"      : "https://sebastian3495.github.io/image/background-image/",
       "date"     : "2016-11-29 00:00:00 -0500"
     } ,
   
@@ -36,7 +36,7 @@
       "title"    : "Sample Link Post",
       "category" : "",
       "tags"     : "sample post, link post",
-      "url"      : "http://aronbordin.com/neo-hpstr-jekyll-theme/intro/sample-link-post/",
+      "url"      : "https://sebastian3495.github.io/intro/sample-link-post/",
       "date"     : "2016-11-28 00:00:00 -0500"
     } ,
   
@@ -44,7 +44,7 @@
       "title"    : "A Post with a Video",
       "category" : "",
       "tags"     : "sample post, video",
-      "url"      : "http://aronbordin.com/neo-hpstr-jekyll-theme/intro/video-post/",
+      "url"      : "https://sebastian3495.github.io/intro/video-post/",
       "date"     : "2016-11-27 00:00:00 -0500"
     } ,
   
@@ -52,7 +52,7 @@
       "title"    : "A Post with Images",
       "category" : "",
       "tags"     : "sample post, images, test",
-      "url"      : "http://aronbordin.com/neo-hpstr-jekyll-theme/sample/intro/sample-post-images/",
+      "url"      : "https://sebastian3495.github.io/sample/intro/sample-post-images/",
       "date"     : "2016-11-26 00:00:00 -0500"
     } 
   
