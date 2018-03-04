@@ -2,27 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">Blog Title</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
-<link rel="alternate" type="text/html" href="http://localhost:4000" />
-<updated>2018-03-03T14:41:11-05:00</updated>
-<id>http://localhost:4000/</id>
+<link rel="self" type="application/atom+xml" href="http://aronbordin.com/neo-hpstr-jekyll-theme/feed.xml" />
+<link rel="alternate" type="text/html" href="http://aronbordin.com/neo-hpstr-jekyll-theme" />
+<updated>2018-03-04T08:43:30-05:00</updated>
+<id>http://aronbordin.com/neo-hpstr-jekyll-theme/</id>
 <author>
   <name>Sebastian Nielsen</name>
-  <uri>http://localhost:4000/</uri>
+  <uri>http://aronbordin.com/neo-hpstr-jekyll-theme/</uri>
   <email>you@email.com</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[Sample Post]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/intro/sample-post/" />
-  <id>http://localhost:4000/intro/sample-post</id>
+ <link rel="alternate" type="text/html" href="http://aronbordin.com/neo-hpstr-jekyll-theme/intro/sample-post/" />
+  <id>http://aronbordin.com/neo-hpstr-jekyll-theme/intro/sample-post</id>
   <updated>2016-12-02T00:00:00-00:00</updated>
   <published>2016-12-02T00:00:00-05:00</published>
   
   <author>
     <name>Sebastian Nielsen</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://aronbordin.com/neo-hpstr-jekyll-theme</uri>
     <email>you@email.com</email>
   </author>
   <content type="html">
@@ -44,7 +44,7 @@
 
 &lt;p&gt;Lorem ipsum dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/strong&gt;. Nullam dignissim convallis est. Quisque aliquam.&lt;/p&gt;
 
-&lt;p class=&quot;image-right&quot;&gt;&lt;img src=&quot;http://localhost:4000/images/3953273590_704e3899d5_m.jpg&quot; alt=&quot;Smithsonian Image&quot; /&gt;&lt;/p&gt;
+&lt;p class=&quot;image-right&quot;&gt;&lt;img src=&quot;http://aronbordin.com/neo-hpstr-jekyll-theme/images/3953273590_704e3899d5_m.jpg&quot; alt=&quot;Smithsonian Image&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;em&gt;This is emphasized&lt;/em&gt;. Donec faucibus. Nunc iaculis suscipit dui. 53 = 125. Water is H&lt;sub&gt;2&lt;/sub&gt;O. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. The New York Times &lt;cite&gt;(That’s a citation)&lt;/cite&gt;. &lt;u&gt;Underline&lt;/u&gt;. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.&lt;/p&gt;
 
@@ -164,21 +164,21 @@
 
 &lt;p&gt;The image must be in the &lt;code class=&quot;highlighter-rouge&quot;&gt;/images&lt;/code&gt; folder.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/intro/sample-post/&quot;&gt;Sample Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;http://localhost:4000&quot;&gt;Blog Title&lt;/a&gt; on December 02, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://aronbordin.com/neo-hpstr-jekyll-theme/intro/sample-post/&quot;&gt;Sample Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;http://aronbordin.com/neo-hpstr-jekyll-theme&quot;&gt;Blog Title&lt;/a&gt; on December 02, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Syntax Highlighting Post]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/intro/code-highlighting-post/" />
-  <id>http://localhost:4000/intro/code-highlighting-post</id>
+ <link rel="alternate" type="text/html" href="http://aronbordin.com/neo-hpstr-jekyll-theme/intro/code-highlighting-post/" />
+  <id>http://aronbordin.com/neo-hpstr-jekyll-theme/intro/code-highlighting-post</id>
   <updated>2016-12-01T00:00:00-00:00</updated>
   <published>2016-12-01T00:00:00-05:00</published>
   
   <author>
     <name>Sebastian Nielsen</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://aronbordin.com/neo-hpstr-jekyll-theme</uri>
     <email>you@email.com</email>
   </author>
   <content type="html">
@@ -241,20 +241,20 @@
   &lt;/ol&gt;
 &lt;/div&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/intro/code-highlighting-post/&quot;&gt;Syntax Highlighting Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;http://localhost:4000&quot;&gt;Blog Title&lt;/a&gt; on December 01, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://aronbordin.com/neo-hpstr-jekyll-theme/intro/code-highlighting-post/&quot;&gt;Syntax Highlighting Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;http://aronbordin.com/neo-hpstr-jekyll-theme&quot;&gt;Blog Title&lt;/a&gt; on December 01, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Dark Post]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/dark-post/" />
-  <id>http://localhost:4000/dark-post</id>
+ <link rel="alternate" type="text/html" href="http://aronbordin.com/neo-hpstr-jekyll-theme/dark-post/" />
+  <id>http://aronbordin.com/neo-hpstr-jekyll-theme/dark-post</id>
   <published>2016-11-30T00:00:00-05:00</published>
   <updated>2016-11-30T00:00:00-05:00</updated>
   <author>
     <name>Sebastian Nielsen</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://aronbordin.com/neo-hpstr-jekyll-theme</uri>
     <email>you@email.com</email>
   </author>
   <content type="html">
@@ -264,20 +264,20 @@
 
 &lt;p&gt;on your post. This theme adds a dark background with a white panel to show your content.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/dark-post/&quot;&gt;Dark Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;http://localhost:4000&quot;&gt;Blog Title&lt;/a&gt; on November 30, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://aronbordin.com/neo-hpstr-jekyll-theme/dark-post/&quot;&gt;Dark Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;http://aronbordin.com/neo-hpstr-jekyll-theme&quot;&gt;Blog Title&lt;/a&gt; on November 30, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Post with a Background Image]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/image/background-image/" />
-  <id>http://localhost:4000/image/background-image</id>
+ <link rel="alternate" type="text/html" href="http://aronbordin.com/neo-hpstr-jekyll-theme/image/background-image/" />
+  <id>http://aronbordin.com/neo-hpstr-jekyll-theme/image/background-image</id>
   <published>2016-11-29T00:00:00-05:00</published>
   <updated>2016-11-29T00:00:00-05:00</updated>
   <author>
     <name>Sebastian Nielsen</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://aronbordin.com/neo-hpstr-jekyll-theme</uri>
     <email>you@email.com</email>
   </author>
   <content type="html">
@@ -292,7 +292,7 @@
 
 &lt;div xmlns:cc=&quot;http://creativecommons.org/ns#&quot; xmlns:dct=&quot;http://purl.org/dc/terms/&quot; about=&quot;http://subtlepatterns.com&quot; class=&quot;notice&quot;&gt;Background images from &lt;span property=&quot;dct:title&quot;&gt;Subtle Patterns&lt;/span&gt; (&lt;a rel=&quot;cc:attributionURL&quot; property=&quot;cc:attributionName&quot; href=&quot;http://subtlepatterns.com&quot;&gt;Subtle Patterns&lt;/a&gt;) / &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;&gt;CC BY-SA 3.0&lt;/a&gt;&lt;/div&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/image/background-image/&quot;&gt;Post with a Background Image&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;http://localhost:4000&quot;&gt;Blog Title&lt;/a&gt; on November 29, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://aronbordin.com/neo-hpstr-jekyll-theme/image/background-image/&quot;&gt;Post with a Background Image&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;http://aronbordin.com/neo-hpstr-jekyll-theme&quot;&gt;Blog Title&lt;/a&gt; on November 29, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -300,31 +300,31 @@
 <entry>
   <title type="html"><![CDATA[Sample Link Post]]></title>
  <link rel="alternate" type="text/html" href="http://aronbordin.com" />
-  <id>http://localhost:4000/intro/sample-link-post</id>
+  <id>http://aronbordin.com/neo-hpstr-jekyll-theme/intro/sample-link-post</id>
   <published>2016-11-28T00:00:00-05:00</published>
   <updated>2016-11-28T00:00:00-05:00</updated>
   <author>
     <name>Sebastian Nielsen</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://aronbordin.com/neo-hpstr-jekyll-theme</uri>
     <email>you@email.com</email>
   </author>
   <content type="html">
     &lt;p&gt;This theme supports &lt;strong&gt;link posts&lt;/strong&gt;, made famous by John Gruber. To use, just add &lt;code class=&quot;highlighter-rouge&quot;&gt;link: http://url-you-want-linked&lt;/code&gt; to the post’s YAML front matter and you’re done.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/intro/sample-link-post/&quot;&gt;Sample Link Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;http://localhost:4000&quot;&gt;Blog Title&lt;/a&gt; on November 28, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://aronbordin.com/neo-hpstr-jekyll-theme/intro/sample-link-post/&quot;&gt;Sample Link Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;http://aronbordin.com/neo-hpstr-jekyll-theme&quot;&gt;Blog Title&lt;/a&gt; on November 28, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[A Post with a Video]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/intro/video-post/" />
-  <id>http://localhost:4000/intro/video-post</id>
+ <link rel="alternate" type="text/html" href="http://aronbordin.com/neo-hpstr-jekyll-theme/intro/video-post/" />
+  <id>http://aronbordin.com/neo-hpstr-jekyll-theme/intro/video-post</id>
   <published>2016-11-27T00:00:00-05:00</published>
   <updated>2016-11-27T00:00:00-05:00</updated>
   <author>
     <name>Sebastian Nielsen</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://aronbordin.com/neo-hpstr-jekyll-theme</uri>
     <email>you@email.com</email>
   </author>
   <content type="html">
@@ -339,20 +339,20 @@
 {:/nomarkdown}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/intro/video-post/&quot;&gt;A Post with a Video&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;http://localhost:4000&quot;&gt;Blog Title&lt;/a&gt; on November 27, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://aronbordin.com/neo-hpstr-jekyll-theme/intro/video-post/&quot;&gt;A Post with a Video&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;http://aronbordin.com/neo-hpstr-jekyll-theme&quot;&gt;Blog Title&lt;/a&gt; on November 27, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[A Post with Images]]></title>
- <link rel="alternate" type="text/html" href="http://localhost:4000/sample/intro/sample-post-images/" />
-  <id>http://localhost:4000/sample/intro/sample-post-images</id>
+ <link rel="alternate" type="text/html" href="http://aronbordin.com/neo-hpstr-jekyll-theme/sample/intro/sample-post-images/" />
+  <id>http://aronbordin.com/neo-hpstr-jekyll-theme/sample/intro/sample-post-images</id>
   <published>2016-11-26T00:00:00-05:00</published>
   <updated>2016-11-26T00:00:00-05:00</updated>
   <author>
     <name>Sebastian Nielsen</name>
-    <uri>http://localhost:4000</uri>
+    <uri>http://aronbordin.com/neo-hpstr-jekyll-theme</uri>
     <email>you@email.com</email>
   </author>
   <content type="html">
@@ -454,7 +454,7 @@ Available values: [1..3].&lt;/li&gt;
 &lt;/figure&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/sample/intro/sample-post-images/&quot;&gt;A Post with Images&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;http://localhost:4000&quot;&gt;Blog Title&lt;/a&gt; on November 26, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://aronbordin.com/neo-hpstr-jekyll-theme/sample/intro/sample-post-images/&quot;&gt;A Post with Images&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;http://aronbordin.com/neo-hpstr-jekyll-theme&quot;&gt;Blog Title&lt;/a&gt; on November 26, 2016.&lt;/p&gt;
   </content>
 </entry>
 
