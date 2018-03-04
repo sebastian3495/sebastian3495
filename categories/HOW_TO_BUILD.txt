@@ -1,0 +1,5 @@
+set JEKLL_ENV=production
+
+bundle exec jekyll build
+
+push the newly generated content inside the '_site' folder to github
