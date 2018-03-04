@@ -209,6 +209,30 @@
   <header>
     
     <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2016-11-28T00:00:00-05:00"><a href="https://sebastian3495.github.io/intro/sample-link-post/">November 28, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="https://sebastian3495.github.io/about/" title="About Sebastian Nielsen">Sebastian Nielsen</a></span></span>
+      
+      <span class="entry-reading-time">
+        <i class="fa fa-clock-o"></i>
+        
+        Reading time ~1 minute
+      </span><!-- /.entry-reading-time -->
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="https://sebastian3495.github.io/intro/sample-link-post/" class="permalink" rel="bookmark" title="Sample Link Post"><i class="fa fa-bookmark"></i></a> <a href="http://aronbordin.com">Sample Link Post</a></h1>
+    
+  </header>
+  <div class="entry-content">
+      <p>This theme supports <strong>link posts</strong>, made famous by John Gruber. To use, just add <code class="highlighter-rouge">link: http://url-you-want-linked</code> to the post’s YAML front matter and you’re done.</p>
+
+      
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
+
+<article class="hentry">
+  <header>
+    
+    <div class="entry-meta">
       <span class="entry-date date published updated"><time datetime="2016-11-27T00:00:00-05:00"><a href="https://sebastian3495.github.io/intro/video-post/">November 27, 2016</a></time></span><span class="author vcard"><span class="fn"><a href="https://sebastian3495.github.io/about/" title="About Sebastian Nielsen">Sebastian Nielsen</a></span></span>
       
       <span class="entry-reading-time">
@@ -223,7 +247,47 @@
     
   </header>
   <div class="entry-content">
-      <iframe width="560" height="315" src="//www.youtube.com/embed/SU3kYxJmWuQ" frameborder="0" allowfullscreen></iframe>
+      <p>Let’s test some inline math $x$, $y$, $x_1$, $y_1$.</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Now a inline math with special character: $</td>
+      <td>\psi\rangle$, $x’$, $x^*$.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Test a display math:
+<script type="math/tex">|\psi_1\rangle = a|0\rangle + b|1\rangle</script>
+Is it O.K.?</p>
+
+<p>Test a display math with equation number:
+\begin{equation}
+   |\psi_1\rangle = a|0\rangle + b|1\rangle
+\end{equation}
+Is it O.K.?</p>
+
+<p>Test a display math with equation number:
+<script type="math/tex">% <![CDATA[
+\begin{align}
+    |\psi_1\rangle &= a|0\rangle + b|1\rangle \\\\
+    |\psi_2\rangle &= c|0\rangle + d|1\rangle
+  \end{align} %]]></script>
+Is it O.K.?</p>
+
+<p>And test a display math without equaltion number:
+<script type="math/tex">% <![CDATA[
+\begin{align\*}
+    |\psi_1\rangle &= a|0\rangle + b|1\rangle \\\\
+    |\psi_2\rangle &= c|0\rangle + d|1\rangle
+  \end{align\*} %]]></script>
+Is it O.K.?</p>
+
+<p>TESTING 
+{::nomarkdown}</p>
+<iframe width="560" height="315" src="//www.youtube.com/embed/SU3kYxJmWuQ" frameborder="0" allowfullscreen=""></iframe>
+<p>{:/nomarkdown}</p>
 
 <p>Video embeds are responsive and scale with the width of the main content block with the help of <a href="http://fitvidsjs.com/">FitVids</a>.</p>
 
