@@ -1,7 +1,23 @@
 [
   
     {
-      "title"    : "Sample Post",
+      "title"    : "KingdomLikes Bot",
+      "category" : "",
+      "tags"     : "sample post",
+      "url"      : "https://sebastian3495.github.io/intro/Kingdomlikes-bot/",
+      "date"     : "2018-03-05 00:00:00 -0500"
+    } ,
+  
+    {
+      "title"    : "Sample Math",
+      "category" : "",
+      "tags"     : "sample post",
+      "url"      : "https://sebastian3495.github.io/intro/twitter-bot/",
+      "date"     : "2016-12-02 00:00:00 -0500"
+    } ,
+  
+    {
+      "title"    : "Sample Math",
       "category" : "",
       "tags"     : "sample post",
       "url"      : "https://sebastian3495.github.io/intro/sample-math/",
