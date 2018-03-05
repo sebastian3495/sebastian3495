@@ -1,19 +1,27 @@
 [
   
     {
+      "title"    : "VøBot",
+      "category" : "",
+      "tags"     : "Projects",
+      "url"      : "https://sebastian3495.github.io/intro/V%C3%B8Bot/",
+      "date"     : "2018-03-05 00:00:00 -0500"
+    } ,
+  
+    {
+      "title"    : "Disable spotify ads",
+      "category" : "",
+      "tags"     : "sample post",
+      "url"      : "https://sebastian3495.github.io/intro/Spotify-ads/",
+      "date"     : "2018-03-05 00:00:00 -0500"
+    } ,
+  
+    {
       "title"    : "KingdomLikes Bot",
       "category" : "",
       "tags"     : "sample post",
       "url"      : "https://sebastian3495.github.io/intro/Kingdomlikes-bot/",
       "date"     : "2018-03-05 00:00:00 -0500"
-    } ,
-  
-    {
-      "title"    : "Sample Math",
-      "category" : "",
-      "tags"     : "sample post",
-      "url"      : "https://sebastian3495.github.io/intro/twitter-bot/",
-      "date"     : "2016-12-02 00:00:00 -0500"
     } ,
   
     {

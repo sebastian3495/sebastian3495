@@ -1,16 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-<title type="text">Blog Title</title>
+<title type="text">Sebastian Nielsen Blog</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://sebastian3495.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://sebastian3495.github.io" />
-<updated>2018-03-05T11:29:44-05:00</updated>
+<updated>2018-03-05T14:42:50-05:00</updated>
 <id>https://sebastian3495.github.io/</id>
 <author>
   <name>Sebastian Nielsen</name>
   <uri>https://sebastian3495.github.io/</uri>
   <email>sebastiangrundet@hotmail.dk</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[VøBot]]></title>
+ <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/intro/V%C3%B8Bot/" />
+  <id>https://sebastian3495.github.io/intro/VøBot</id>
+  <updated>2018-03-05T00:00:00-00:00</updated>
+  <published>2018-03-05T00:00:00-05:00</published>
+  
+  <author>
+    <name>Sebastian Nielsen</name>
+    <uri>https://sebastian3495.github.io</uri>
+    <email>sebastiangrundet@hotmail.dk</email>
+  </author>
+  <content type="html">
+    &lt;h2 id=&quot;færdiggør-rentabilitetsanalyser-på-40-sek--hourglass_flowing_sandhourglass-ok_hand&quot;&gt;Færdiggør rentabilitetsanalyser på 40 sek. ! :hourglass_flowing_sand::hourglass: :ok_hand:&lt;/h2&gt;
+&lt;p&gt;Dette software er udviklet til hhx studerende med fokus på at gøre det nemmere at arbejde med rentabiletsanalyser. Alt du skal gøre er at copy paste 
+dine nøgletal ind i programmet, hvorefter VøBot skriver en rentabilitetsanalyse til et 12-tal! Som om det ikke er nok tillbyder VøBot en række ekstra features, som 
+du kan læse mere om på VøBot’s hjemmeside: &lt;br /&gt;&lt;a id=&quot;VøBot&quot; target=&quot;_blank&quot; href=&quot;http://www.voebot.tk/&quot;&gt;:fire:www.voebot.tk:fire:&lt;/a&gt;&lt;/p&gt;
+
+&lt;style&gt;
+	#VøBot:hover {
+		color: red;
+	}
+&lt;/style&gt;
+
+&lt;p class=&quot;image-right&quot;&gt;&lt;img src=&quot;https://sebastian3495.github.io/images/P_voebot/logoRound.PNG&quot; width=&quot;150px;&quot; style=&quot;margin-right: 100px;&quot; /&gt;
+&lt;img src=&quot;https://sebastian3495.github.io/images/P_voebot/gui.PNG&quot; width=&quot;350px;&quot; /&gt;&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/V%C3%B8Bot/&quot;&gt;VøBot&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on March 05, 2018.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Disable spotify ads]]></title>
+ <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/intro/Spotify-ads/" />
+  <id>https://sebastian3495.github.io/intro/Spotify-ads</id>
+  <updated>2016-12-02T00:00:00-00:00</updated>
+  <published>2018-03-05T00:00:00-05:00</published>
+  
+  <author>
+    <name>Sebastian Nielsen</name>
+    <uri>https://sebastian3495.github.io</uri>
+    <email>sebastiangrundet@hotmail.dk</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Spotify is coded in such a way that it will keep playing music, if it can’t gaing access to an ad. This script  redirects all Spotify’s requests 
+to the address &lt;code class=&quot;highlighter-rouge&quot;&gt;0.0.0.0&lt;/code&gt; at which there is no ad resources located. That’s all there is it to. Enjoy the music! :musical_note::musical_note::musical_note:&lt;/p&gt;
+
+&lt;div&gt;&lt;a href=&quot;https://gist.github.com/Sebastian-Nielsen/5480aa6c0775e7a4604ee34bdd17416c&quot; class=&quot;btn btn-success&quot;&gt;Get the code&lt;/a&gt;&lt;/div&gt;
+
+&lt;p class=&quot;image-right&quot;&gt;&lt;img src=&quot;https://sebastian3495.github.io/images/P_spotify/file.PNG&quot; alt=&quot;Smithsonian Image&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;instructions&quot;&gt;Instructions&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;Copy the code from the gist and paste it into a bat file. &lt;br /&gt;
+&lt;em&gt;(A bat file is a file with the file extension .bat)&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;Run it&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&amp;lt;code snippet&amp;gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;@echo 
+title Spotify-noad
+:: BatchGotAdmin
+:-------------------------------------
+REM  --&amp;gt; Check for permissions
+   IF &quot;%PROCESSOR_ARCHITECTURE%&quot; EQU &quot;amd64&quot; (
+&amp;gt;nul 2&amp;gt;&amp;amp;1 &quot;%SYSTEMROOT%\SysWOW64\cacls.exe&quot; &quot;%SYSTEMROOT%\SysWOW64\config\system&quot;
+) ELSE (
+&amp;gt;nul 2&amp;gt;&amp;amp;1 &quot;%SYSTEMROOT%\system32\cacls.exe&quot; &quot;%SYSTEMROOT%\system32\config\system&quot;
+)
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/Spotify-ads/&quot;&gt;Disable spotify ads&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on March 05, 2018.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -26,12 +106,14 @@
     <email>sebastiangrundet@hotmail.dk</email>
   </author>
   <content type="html">
-    &lt;h1 id=&quot;kingdomlikes-bot-fire&quot;&gt;kingdomlikes-bot :fire:&lt;/h1&gt;
-&lt;p&gt;Designed to automate the process of earning points on kingdomlikes. You can use the points to get like/followers/shares on a social media of your choice.&lt;/p&gt;
+    &lt;p&gt;Designed to automate the process of earning points on kingdomlikes. You can use the points to get like/followers/shares on a social media of your choice.&lt;/p&gt;
+
+&lt;div&gt;&lt;a href=&quot;https://github.com/Sebastian-Nielsen/kingdomlikes-bot&quot; class=&quot;btn btn-success&quot;&gt;Get the code&lt;/a&gt;&lt;/div&gt;
 
 &lt;h1 id=&quot;instructions-book&quot;&gt;Instructions :book:&lt;/h1&gt;
 &lt;ul&gt;
   &lt;li&gt;Install Python 3.x :snake:&lt;/li&gt;
+  &lt;li&gt;Edit config.json&lt;/li&gt;
   &lt;li&gt;Comment out the main function and uncomment the collect cookies function. 
 Proceed to log onto your social medias account in the order the script tells you to.&lt;/li&gt;
   &lt;li&gt;Comment out the collect cookies function and uncomment the main function and run it.&lt;/li&gt;
@@ -40,168 +122,7 @@ Proceed to log onto your social medias account in the order the script tells you
 &lt;h1 id=&quot;feeling-generous--heart&quot;&gt;Feeling generous ? :heart:&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;business=DFPZMAKFDBBPA&amp;amp;lc=US&amp;amp;item_name=Sebastian%20A%20B%20Nielsen&amp;amp;no_note=0&amp;amp;cn=Tilf%c3%b8j%20en%20besked%20til%20s%c3%a6lgeren%3a&amp;amp;no_shipping=2&amp;amp;currency_code=DKK&amp;amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted&quot;&gt;&lt;img src=&quot;https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif&quot; alt=&quot;paypal&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/Kingdomlikes-bot/&quot;&gt;KingdomLikes Bot&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Blog Title&lt;/a&gt; on March 05, 2018.&lt;/p&gt;
-  </content>
-</entry>
-
-
-<entry>
-  <title type="html"><![CDATA[Sample Math]]></title>
- <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/intro/twitter-bot/" />
-  <id>https://sebastian3495.github.io/intro/twitter-bot</id>
-  <updated>2016-12-02T00:00:00-00:00</updated>
-  <published>2016-12-02T00:00:00-05:00</published>
-  
-  <author>
-    <name>Sebastian Nielsen</name>
-    <uri>https://sebastian3495.github.io</uri>
-    <email>sebastiangrundet@hotmail.dk</email>
-  </author>
-  <content type="html">
-    &lt;p&gt;testing: &lt;script type=&quot;math/tex&quot;&gt;a^2 + b^2 = c^2&lt;/script&gt;&lt;/p&gt;
-
-&lt;p&gt;testing2: $a^2 + b^2 = c^2$&lt;/p&gt;
-
-&lt;p&gt;testing&lt;/p&gt;
-
-&lt;h1 id=&quot;heading-1&quot;&gt;Heading 1&lt;/h1&gt;
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;x = {-b \pm \sqrt{b^2-4ac} \over 2a}&lt;/script&gt;&lt;/p&gt;
-&lt;h2 id=&quot;heading-2&quot;&gt;Heading 2&lt;/h2&gt;
-
-&lt;h3 id=&quot;heading-3&quot;&gt;Heading 3&lt;/h3&gt;
-&lt;p&gt;&lt;script type=&quot;math/tex&quot;&gt;x = {-b \pm \sqrt{b^2-4ac} \over 2a}&lt;/script&gt;&lt;/p&gt;
-&lt;h4 id=&quot;heading-4&quot;&gt;Heading 4&lt;/h4&gt;
-&lt;p&gt;$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $&lt;/p&gt;
-&lt;h5 id=&quot;heading-5&quot;&gt;Heading 5&lt;/h5&gt;
-
-&lt;h6 id=&quot;heading-6&quot;&gt;Heading 6&lt;/h6&gt;
-
-&lt;h3 id=&quot;body-text&quot;&gt;Body text&lt;/h3&gt;
-
-&lt;p&gt;Lorem ipsu$ x = {-b \pm \sqrt{b^2-4ac} \over 2a} $
-m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/strong&gt;. Nullam dignissim convallis est. Quisque aliquam.&lt;/p&gt;
-
-&lt;p class=&quot;image-right&quot;&gt;&lt;img src=&quot;https://sebastian3495.github.io/images/3953273590_704e3899d5_m.jpg&quot; alt=&quot;Smithsonian Image&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;This is emphasized&lt;/em&gt;. Donec faucibus. Nunc iaculis suscipit dui. 53 = 125. Water is H&lt;sub&gt;2&lt;/sub&gt;O. Nam sit amet sem. Aliquam libero nisi, imperdiet at, tincidunt nec, gravida vehicula, nisl. The New York Times &lt;cite&gt;(That’s a citation)&lt;/cite&gt;. &lt;u&gt;Underline&lt;/u&gt;. Maecenas ornare tortor. Donec sed tellus eget sapien fringilla nonummy. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus.&lt;/p&gt;
-
-&lt;p&gt;HTML and &lt;abbr title=&quot;cascading stylesheets&quot;&gt;CSS&lt;abbr&gt; are our tools. Mauris a ante. Suspendisse quam sem, consequat at, commodo vitae, feugiat in, nunc. Morbi imperdiet augue quis tellus. Praesent mattis, massa quis luctus fermentum, turpis mi volutpat justo, eu volutpat enim diam eget metus.&lt;/abbr&gt;&lt;/abbr&gt;&lt;/p&gt;
-
-&lt;p&gt;If you want to show just a part of your post in the come page, add the &lt;code class=&quot;highlighter-rouge&quot;&gt;&amp;lt;!-- more --&amp;gt;&lt;/code&gt; tag to your post content. Everything after this tag will be hidden from the page listing page.&lt;/p&gt;
-
-&lt;h3 id=&quot;blockquotes&quot;&gt;Blockquotes&lt;/h3&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Lorem ipsum dolor sit amet, test link adipiscing elit. Nullam dignissim convallis est. Quisque aliquam.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2 id=&quot;list-types&quot;&gt;List Types&lt;/h2&gt;
-
-&lt;h3 id=&quot;ordered-lists&quot;&gt;Ordered Lists&lt;/h3&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;Item one
-    &lt;ol&gt;
-      &lt;li&gt;sub item one&lt;/li&gt;
-      &lt;li&gt;sub item two&lt;/li&gt;
-      &lt;li&gt;sub item three&lt;/li&gt;
-    &lt;/ol&gt;
-  &lt;/li&gt;
-  &lt;li&gt;Item two&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3 id=&quot;unordered-lists&quot;&gt;Unordered Lists&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;Item one&lt;/li&gt;
-  &lt;li&gt;Item two&lt;/li&gt;
-  &lt;li&gt;Item three&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;tables&quot;&gt;Tables&lt;/h2&gt;
-
-&lt;table rules=&quot;groups&quot;&gt;
-  &lt;thead&gt;
-    &lt;tr&gt;
-      &lt;th style=&quot;text-align: left&quot;&gt;Header1&lt;/th&gt;
-      &lt;th style=&quot;text-align: center&quot;&gt;Header2&lt;/th&gt;
-      &lt;th style=&quot;text-align: right&quot;&gt;Header3&lt;/th&gt;
-    &lt;/tr&gt;
-  &lt;/thead&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell2&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell4&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell5&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell6&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-  &lt;tbody&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell2&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell3&lt;/td&gt;
-    &lt;/tr&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;cell4&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;cell5&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;cell6&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tbody&gt;
-  &lt;tfoot&gt;
-    &lt;tr&gt;
-      &lt;td style=&quot;text-align: left&quot;&gt;Foot1&lt;/td&gt;
-      &lt;td style=&quot;text-align: center&quot;&gt;Foot2&lt;/td&gt;
-      &lt;td style=&quot;text-align: right&quot;&gt;Foot3&lt;/td&gt;
-    &lt;/tr&gt;
-  &lt;/tfoot&gt;
-&lt;/table&gt;
-
-&lt;h2 id=&quot;code-snippets&quot;&gt;Code Snippets&lt;/h2&gt;
-
-&lt;p&gt;Syntax highlighting via Pygments&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-css&quot; data-lang=&quot;css&quot;&gt;&lt;span class=&quot;nf&quot;&gt;#container&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;float&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;margin&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;-240px&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-  &lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Non Pygments code example&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&amp;lt;div id=&quot;awesome&quot;&amp;gt;
-    &amp;lt;p&amp;gt;This is great isn't it?&amp;lt;/p&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;buttons&quot;&gt;Buttons&lt;/h2&gt;
-
-&lt;p&gt;Make any link standout more when applying the &lt;code class=&quot;highlighter-rouge&quot;&gt;.btn&lt;/code&gt; class.&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;a&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;href=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;#&quot;&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;btn btn-success&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;Success Button&lt;span class=&quot;nt&quot;&gt;&amp;lt;/a&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;div&gt;&lt;a href=&quot;#&quot; class=&quot;btn&quot;&gt;Primary Button&lt;/a&gt;&lt;/div&gt;
-&lt;div&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn-success&quot;&gt;Success Button&lt;/a&gt;&lt;/div&gt;
-&lt;div&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn-warning&quot;&gt;Warning Button&lt;/a&gt;&lt;/div&gt;
-&lt;div&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn-danger&quot;&gt;Danger Button&lt;/a&gt;&lt;/div&gt;
-&lt;div&gt;&lt;a href=&quot;#&quot; class=&quot;btn btn-info&quot;&gt;Info Button&lt;/a&gt;&lt;/div&gt;
-
-&lt;h2 id=&quot;post-featured-image&quot;&gt;Post Featured Image&lt;/h2&gt;
-
-&lt;p&gt;To show an image banner at top of your post, use add the following code:&lt;/p&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;na&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;feature&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;lt;name of the image&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;credit&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;lt;source of the image - optional&amp;gt;&lt;/span&gt;
-    &lt;span class=&quot;na&quot;&gt;creditlink&lt;/span&gt;&lt;span class=&quot;pi&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;lt;source of the image (url) - optional&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;The image must be in the &lt;code class=&quot;highlighter-rouge&quot;&gt;/images&lt;/code&gt; folder.&lt;/p&gt;
-
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/twitter-bot/&quot;&gt;Sample Math&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Blog Title&lt;/a&gt; on December 02, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/Kingdomlikes-bot/&quot;&gt;KingdomLikes Bot&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on March 05, 2018.&lt;/p&gt;
   </content>
 </entry>
 
@@ -362,7 +283,7 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
 
 &lt;p&gt;The image must be in the &lt;code class=&quot;highlighter-rouge&quot;&gt;/images&lt;/code&gt; folder.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/sample-math/&quot;&gt;Sample Math&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Blog Title&lt;/a&gt; on December 02, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/sample-math/&quot;&gt;Sample Math&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on December 02, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -439,7 +360,7 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
   &lt;/ol&gt;
 &lt;/div&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/code-highlighting-post/&quot;&gt;Syntax Highlighting Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Blog Title&lt;/a&gt; on December 01, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/code-highlighting-post/&quot;&gt;Syntax Highlighting Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on December 01, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -462,7 +383,7 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
 
 &lt;p&gt;on your post. This theme adds a dark background with a white panel to show your content.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/dark-post/&quot;&gt;Dark Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Blog Title&lt;/a&gt; on November 30, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/dark-post/&quot;&gt;Dark Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on November 30, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -490,7 +411,7 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
 
 &lt;div xmlns:cc=&quot;http://creativecommons.org/ns#&quot; xmlns:dct=&quot;http://purl.org/dc/terms/&quot; about=&quot;http://subtlepatterns.com&quot; class=&quot;notice&quot;&gt;Background images from &lt;span property=&quot;dct:title&quot;&gt;Subtle Patterns&lt;/span&gt; (&lt;a rel=&quot;cc:attributionURL&quot; property=&quot;cc:attributionName&quot; href=&quot;http://subtlepatterns.com&quot;&gt;Subtle Patterns&lt;/a&gt;) / &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;&gt;CC BY-SA 3.0&lt;/a&gt;&lt;/div&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/image/background-image/&quot;&gt;Post with a Background Image&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Blog Title&lt;/a&gt; on November 29, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/image/background-image/&quot;&gt;Post with a Background Image&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on November 29, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -509,7 +430,7 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
   <content type="html">
     &lt;p&gt;This theme supports &lt;strong&gt;link posts&lt;/strong&gt;, made famous by John Gruber. To use, just add &lt;code class=&quot;highlighter-rouge&quot;&gt;link: http://url-you-want-linked&lt;/code&gt; to the post’s YAML front matter and you’re done.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/sample-link-post/&quot;&gt;Sample Link Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Blog Title&lt;/a&gt; on November 28, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/sample-link-post/&quot;&gt;Sample Link Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on November 28, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -537,7 +458,7 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
 {:/nomarkdown}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/video-post/&quot;&gt;A Post with a Video&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Blog Title&lt;/a&gt; on November 27, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/video-post/&quot;&gt;A Post with a Video&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on November 27, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -652,7 +573,7 @@ Available values: [1..3].&lt;/li&gt;
 &lt;/figure&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/sample/intro/sample-post-images/&quot;&gt;A Post with Images&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Blog Title&lt;/a&gt; on November 26, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/sample/intro/sample-post-images/&quot;&gt;A Post with Images&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on November 26, 2016.&lt;/p&gt;
   </content>
 </entry>
 

@@ -4,8 +4,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
-<title>KingdomLikes Bot – Sebastian Nielsen Blog</title>
-<meta name="description" content="Designed to automate the process of earning points on kingdomlikes.">
+<title>Disable spotify ads – Sebastian Nielsen Blog</title>
+<meta name="description" content="Do you hate spotify ads as much as me?">
 <meta name="keywords" content="sample post">
 
 
@@ -13,18 +13,18 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="KingdomLikes Bot">
-<meta property="og:description" content="Designed to automate the process of earning points on kingdomlikes.">
-<meta property="og:url" content="https://sebastian3495.github.io/intro/Kingdomlikes-bot/">
+<meta property="og:title" content="Disable spotify ads">
+<meta property="og:description" content="Do you hate spotify ads as much as me?">
+<meta property="og:url" content="https://sebastian3495.github.io/intro/Spotify-ads/">
 <meta property="og:site_name" content="Sebastian Nielsen Blog">
-<meta property="og:image" content="https://sebastian3495.github.io/images/P_kingdomlikes-bot/logo.png">
+<meta property="og:image" content="https://sebastian3495.github.io/images/P_spotify/logo.jpg">
 
 
 
 
 
 
-<link rel="canonical" href="https://sebastian3495.github.io/intro/Kingdomlikes-bot/">
+<link rel="canonical" href="https://sebastian3495.github.io/intro/Spotify-ads/">
 <link href="https://sebastian3495.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="Sebastian Nielsen Blog Feed">
 
 <!-- http://t.co/dKP3o1e -->
@@ -156,7 +156,7 @@
 <div class="entry-header">
   <div class="header-title">
     <div class="header-title-wrap">
-      <h1>KingdomLikes Bot</h1>
+      <h1>Disable spotify ads</h1>
       
         <h2><span class="entry-date date published updated"><time datetime="2018-03-05T00:00:00-05:00">March 05, 2018</time></span></h2>
       
@@ -230,40 +230,51 @@
     <div class="entry-content">
         
             <div class="entry-image-index">
-              <img src="https://sebastian3495.github.io/images/P_kingdomlikes-bot/logo.png" alt="KingdomLikes Bot">
+              <img src="https://sebastian3495.github.io/images/P_spotify/logo.jpg" alt="Disable spotify ads">
               
             </div>
         
-      <h1 class="post-title entry-title">KingdomLikes Bot</h1>
-      <p>Designed to automate the process of earning points on kingdomlikes. You can use the points to get like/followers/shares on a social media of your choice.</p>
+      <h1 class="post-title entry-title">Disable spotify ads</h1>
+      <p>Spotify is coded in such a way that it will keep playing music, if it can’t gaing access to an ad. This script  redirects all Spotify’s requests 
+to the address <code class="highlighter-rouge">0.0.0.0</code> at which there is no ad resources located. That’s all there is it to. Enjoy the music! <img class="emoji" title=":musical_note:" alt=":musical_note:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f3b5.png" height="20" width="20"><img class="emoji" title=":musical_note:" alt=":musical_note:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f3b5.png" height="20" width="20"><img class="emoji" title=":musical_note:" alt=":musical_note:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f3b5.png" height="20" width="20"></p>
 
-<div><a href="https://github.com/Sebastian-Nielsen/kingdomlikes-bot" class="btn btn-success">Get the code</a></div>
+<div><a href="https://gist.github.com/Sebastian-Nielsen/5480aa6c0775e7a4604ee34bdd17416c" class="btn btn-success">Get the code</a></div>
 
-<h1 id="instructions-book">Instructions <img class="emoji" title=":book:" alt=":book:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f4d6.png" height="20" width="20">
-</h1>
+<p class="image-right"><img src="https://sebastian3495.github.io/images/P_spotify/file.PNG" alt="Smithsonian Image"></p>
+
+<h1 id="instructions">Instructions</h1>
 <ul>
-  <li>Install Python 3.x <img class="emoji" title=":snake:" alt=":snake:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f40d.png" height="20" width="20">
+  <li>Copy the code from the gist and paste it into a bat file. <br>
+<em>(A bat file is a file with the file extension .bat)</em>
 </li>
-  <li>Edit config.json</li>
-  <li>Comment out the main function and uncomment the collect cookies function. 
-Proceed to log onto your social medias account in the order the script tells you to.</li>
-  <li>Comment out the collect cookies function and uncomment the main function and run it.</li>
+  <li>Run it</li>
 </ul>
 
-<h1 id="feeling-generous--heart">Feeling generous ? <img class="emoji" title=":heart:" alt=":heart:" src="https://assets-cdn.github.com/images/icons/emoji/unicode/2764.png" height="20" width="20">
-</h1>
-<p><a href="https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;business=DFPZMAKFDBBPA&amp;lc=US&amp;item_name=Sebastian%20A%20B%20Nielsen&amp;no_note=0&amp;cn=Tilf%c3%b8j%20en%20besked%20til%20s%c3%a6lgeren%3a&amp;no_shipping=2&amp;currency_code=DKK&amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted"><img src="https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif" alt="paypal"></a></p>
+<p>&lt;code snippet&gt;</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>@echo 
+title Spotify-noad
+:: BatchGotAdmin
+:-------------------------------------
+REM  --&gt; Check for permissions
+   IF "%PROCESSOR_ARCHITECTURE%" EQU "amd64" (
+&gt;nul 2&gt;&amp;1 "%SYSTEMROOT%\SysWOW64\cacls.exe" "%SYSTEMROOT%\SysWOW64\config\system"
+) ELSE (
+&gt;nul 2&gt;&amp;1 "%SYSTEMROOT%\system32\cacls.exe" "%SYSTEMROOT%\system32\config\system"
+)
+</code></pre></div></div>
+
 
       <footer class="entry-meta">
         <span class="entry-tags"><a href="https://sebastian3495.github.io/tags#sample%20post" title="Pages tagged sample post" class="tag"><span class="term">sample post</span></a></span>
-        <span>Updated on <span class="entry-date date updated"><time datetime="2018-03-05">March 05, 2018</time></span></span>
+        <span>Updated on <span class="entry-date date updated"><time datetime="2016-12-02">December 02, 2016</time></span></span>
         
         <span class="author vcard"><span class="fn">Sebastian Nielsen</span></span>
         <div class="social-share">
   <ul class="socialcount socialcount-small inline-list">
-    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https://sebastian3495.github.io/intro/Kingdomlikes-bot/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
-    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=https://sebastian3495.github.io/intro/Kingdomlikes-bot/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
-    <li class="googleplus"><a href="https://plus.google.com/share?url=https://sebastian3495.github.io/intro/Kingdomlikes-bot/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
+    <li class="facebook"><a href="https://www.facebook.com/sharer/sharer.php?u=https://sebastian3495.github.io/intro/Spotify-ads/" title="Share on Facebook"><span class="count"><i class="fa fa-facebook-square"></i> Like</span></a></li>
+    <li class="twitter"><a href="https://twitter.com/intent/tweet?text=https://sebastian3495.github.io/intro/Spotify-ads/" title="Share on Twitter"><span class="count"><i class="fa fa-twitter-square"></i> Tweet</span></a></li>
+    <li class="googleplus"><a href="https://plus.google.com/share?url=https://sebastian3495.github.io/intro/Spotify-ads/" title="Share on Google Plus"><span class="count"><i class="fa fa-google-plus-square"></i> +1</span></a></li>
   </ul>
 </div>
 <!-- /.social-share -->
@@ -305,7 +316,7 @@ Proceed to log onto your social medias account in the order the script tells you
     <div class="read-more">
   
     <div class="read-more-header">
-      <a href="https://sebastian3495.github.io/intro/sample-math/" class="read-more-btn">Read More</a>
+      <a href="https://sebastian3495.github.io/intro/Kingdomlikes-bot/" class="read-more-btn">Read More</a>
     </div>
 <!-- /.read-more-header -->
     <div class="read-more-content">
@@ -317,7 +328,7 @@ Proceed to log onto your social medias account in the order the script tells you
   <div class="read-more-list">
     
       <div class="list-item">
-        <h4><a href="https://sebastian3495.github.io/intro/Spotify-ads/" title="Disable spotify ads">Disable spotify ads</a></h4>
+        <h4><a href="https://sebastian3495.github.io/intro/Kingdomlikes-bot/" title="KingdomLikes Bot">KingdomLikes Bot</a></h4>
         <span>Published on March 05, 2018</span>
       </div>
 <!-- /.list-item -->
