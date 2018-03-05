@@ -62,8 +62,12 @@
 
 
 <!--support latex-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="path-to-mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
 <!--kramdown (latex) 
 -->
 </head>
@@ -231,7 +235,7 @@
     </div><!-- /.entry-content -->
     <div class="read-more">
   <div class="read-more-header">
-    <a href="http://aronbordin.com" class="read-more-btn">About the Author</a>
+    <a href="https://aronbordin.com" class="read-more-btn">About the Author</a>
   </div><!-- /.read-more-header -->
   <div class="read-more-content author-info">
     <h3>Sebastian Nielsen</h3>
@@ -265,20 +269,20 @@
       <a href="https://sebastian3495.github.io/intro/video-post/" class="read-more-btn">Read More</a>
     </div><!-- /.read-more-header -->
     <div class="read-more-content">
-      <h3><a href="https://sebastian3495.github.io/intro/First-post/" title="Testing karuku math">Testing karuku math</a></h3>
-      <p>testing math <a href="https://sebastian3495.github.io/intro/First-post/">Continue reading</a></p>
+      <h3><a href="https://sebastian3495.github.io/intro/sample-post/" title="Sample Post">Sample Post</a></h3>
+      <p>Just about everything you'll need to style in the theme: headings, paragraphs, blockquotes, tables, code blocks, and more. <a href="https://sebastian3495.github.io/intro/sample-post/">Continue reading</a></p>
     </div><!-- /.read-more-content -->
   
   <div class="read-more-list">
     
       <div class="list-item">
-        <h4><a href="https://sebastian3495.github.io/intro/sample-post/" title="Sample Post">Sample Post</a></h4>
-        <span>Published on December 02, 2016</span>
+        <h4><a href="https://sebastian3495.github.io/intro/code-highlighting-post/" title="Syntax Highlighting Post">Syntax Highlighting Post</a></h4>
+        <span>Published on December 01, 2016</span>
       </div><!-- /.list-item -->
     
       <div class="list-item">
-        <h4><a href="https://sebastian3495.github.io/intro/code-highlighting-post/" title="Syntax Highlighting Post">Syntax Highlighting Post</a></h4>
-        <span>Published on December 01, 2016</span>
+        <h4><a href="https://sebastian3495.github.io/dark-post/" title="Dark Post">Dark Post</a></h4>
+        <span>Published on November 30, 2016</span>
       </div><!-- /.list-item -->
     
   </div><!-- /.read-more-list -->

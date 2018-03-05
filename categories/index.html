@@ -62,8 +62,12 @@
 
 
 <!--support latex-->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
-
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+});
+</script>
+<script type="text/javascript" async src="path-to-mathjax/MathJax.js?config=TeX-AMS_CHTML"></script>
 <!--kramdown (latex) 
 -->
 </head>
@@ -216,7 +220,7 @@
   	<li><a href="#image" class="tag"><span class="term">image</span> <span class="count">1</span></a></li>
   
     
-  	<li><a href="#intro" class="tag"><span class="term">intro</span> <span class="count">6</span></a></li>
+  	<li><a href="#intro" class="tag"><span class="term">intro</span> <span class="count">5</span></a></li>
   
     
   	<li><a href="#sample" class="tag"><span class="term">sample</span> <span class="count">1</span></a></li>
@@ -240,8 +244,6 @@
 	<article>
 	<h2 class="tag-heading">intro</h2>
 		<ul>
-    
-      <li class="entry-title"><a href="https://sebastian3495.github.io/intro/First-post/" title="Testing karuku math">Testing karuku math</a></li>
     
       <li class="entry-title"><a href="https://sebastian3495.github.io/intro/sample-post/" title="Sample Post">Sample Post</a></li>
     
