@@ -9,6 +9,14 @@
     } ,
   
     {
+      "title"    : "Sample Post",
+      "category" : "",
+      "tags"     : "sample post",
+      "url"      : "https://sebastian3495.github.io/intro/sample-math/",
+      "date"     : "2016-12-02 00:00:00 -0500"
+    } ,
+  
+    {
       "title"    : "Syntax Highlighting Post",
       "category" : "",
       "tags"     : "sample post, code, highlighting",
