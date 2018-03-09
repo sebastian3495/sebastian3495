@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://sebastian3495.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://sebastian3495.github.io" />
-<updated>2018-03-05T14:45:27-05:00</updated>
+<updated>2018-03-09T20:11:17+01:00</updated>
 <id>https://sebastian3495.github.io/</id>
 <author>
   <name>Sebastian Nielsen</name>
@@ -18,7 +18,7 @@
  <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/intro/V%C3%B8Bot/" />
   <id>https://sebastian3495.github.io/intro/VøBot</id>
   <updated>2018-03-05T00:00:00-00:00</updated>
-  <published>2018-03-05T00:00:00-05:00</published>
+  <published>2018-03-05T00:00:00+01:00</published>
   
   <author>
     <name>Sebastian Nielsen</name>
@@ -51,7 +51,7 @@ du kan læse mere om på VøBot’s hjemmeside: &lt;br /&gt;&lt;a id=&quot;VøBo
  <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/intro/Spotify-ads/" />
   <id>https://sebastian3495.github.io/intro/Spotify-ads</id>
   <updated>2016-12-02T00:00:00-00:00</updated>
-  <published>2018-03-05T00:00:00-05:00</published>
+  <published>2018-03-05T00:00:00+01:00</published>
   
   <author>
     <name>Sebastian Nielsen</name>
@@ -98,7 +98,7 @@ REM  --&amp;gt; Check for permissions
  <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/bots/Kingdomlikes-bot/" />
   <id>https://sebastian3495.github.io/bots/Kingdomlikes-bot</id>
   <updated>2018-03-05T00:00:00-00:00</updated>
-  <published>2018-03-05T00:00:00-05:00</published>
+  <published>2018-03-05T00:00:00+01:00</published>
   
   <author>
     <name>Sebastian Nielsen</name>
@@ -132,7 +132,7 @@ Proceed to log onto your social medias account in the order the script tells you
  <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/intro/sample-math/" />
   <id>https://sebastian3495.github.io/intro/sample-math</id>
   <updated>2016-12-02T00:00:00-00:00</updated>
-  <published>2016-12-02T00:00:00-05:00</published>
+  <published>2016-12-02T00:00:00+01:00</published>
   
   <author>
     <name>Sebastian Nielsen</name>
@@ -293,7 +293,7 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
  <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/intro/code-highlighting-post/" />
   <id>https://sebastian3495.github.io/intro/code-highlighting-post</id>
   <updated>2016-12-01T00:00:00-00:00</updated>
-  <published>2016-12-01T00:00:00-05:00</published>
+  <published>2016-12-01T00:00:00+01:00</published>
   
   <author>
     <name>Sebastian Nielsen</name>
@@ -369,8 +369,8 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
   <title type="html"><![CDATA[Dark Post]]></title>
  <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/dark-post/" />
   <id>https://sebastian3495.github.io/dark-post</id>
-  <published>2016-11-30T00:00:00-05:00</published>
-  <updated>2016-11-30T00:00:00-05:00</updated>
+  <published>2016-11-30T00:00:00+01:00</published>
+  <updated>2016-11-30T00:00:00+01:00</updated>
   <author>
     <name>Sebastian Nielsen</name>
     <uri>https://sebastian3495.github.io</uri>
@@ -392,8 +392,8 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
   <title type="html"><![CDATA[Post with a Background Image]]></title>
  <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/image/background-image/" />
   <id>https://sebastian3495.github.io/image/background-image</id>
-  <published>2016-11-29T00:00:00-05:00</published>
-  <updated>2016-11-29T00:00:00-05:00</updated>
+  <published>2016-11-29T00:00:00+01:00</published>
+  <updated>2016-11-29T00:00:00+01:00</updated>
   <author>
     <name>Sebastian Nielsen</name>
     <uri>https://sebastian3495.github.io</uri>
@@ -420,8 +420,8 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
   <title type="html"><![CDATA[Sample Link Post]]></title>
  <link rel="alternate" type="text/html" href="http://aronbordin.com" />
   <id>https://sebastian3495.github.io/intro/sample-link-post</id>
-  <published>2016-11-28T00:00:00-05:00</published>
-  <updated>2016-11-28T00:00:00-05:00</updated>
+  <published>2016-11-28T00:00:00+01:00</published>
+  <updated>2016-11-28T00:00:00+01:00</updated>
   <author>
     <name>Sebastian Nielsen</name>
     <uri>https://sebastian3495.github.io</uri>
@@ -439,8 +439,8 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
   <title type="html"><![CDATA[A Post with a Video]]></title>
  <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/intro/video-post/" />
   <id>https://sebastian3495.github.io/intro/video-post</id>
-  <published>2016-11-27T00:00:00-05:00</published>
-  <updated>2016-11-27T00:00:00-05:00</updated>
+  <published>2016-11-27T00:00:00+01:00</published>
+  <updated>2016-11-27T00:00:00+01:00</updated>
   <author>
     <name>Sebastian Nielsen</name>
     <uri>https://sebastian3495.github.io</uri>
@@ -467,8 +467,8 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
   <title type="html"><![CDATA[A Post with Images]]></title>
  <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/sample/intro/sample-post-images/" />
   <id>https://sebastian3495.github.io/sample/intro/sample-post-images</id>
-  <published>2016-11-26T00:00:00-05:00</published>
-  <updated>2016-11-26T00:00:00-05:00</updated>
+  <published>2016-11-26T00:00:00+01:00</published>
+  <updated>2016-11-26T00:00:00+01:00</updated>
   <author>
     <name>Sebastian Nielsen</name>
     <uri>https://sebastian3495.github.io</uri>
