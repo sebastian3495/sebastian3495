@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "Sentiment analysis of Danish texts",
+      "category" : "",
+      "tags"     : "Python, Sentiment analysis",
+      "url"      : "https://sebastian3495.github.io/Sentiment-Analysis/",
+      "date"     : "2018-03-16 00:00:00 +0100"
+    } ,
+  
+    {
       "title"    : "Twitter contest joiner bot",
       "category" : "",
       "tags"     : "Projects",

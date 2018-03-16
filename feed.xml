@@ -1,16 +1,135 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
-<title type="text">Sebastian Nielsen Blog</title>
+<title type="text">Sebastian Nielsen's Blog</title>
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://sebastian3495.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://sebastian3495.github.io" />
-<updated>2018-03-10T00:41:47+01:00</updated>
+<updated>2018-03-16T09:46:24+01:00</updated>
 <id>https://sebastian3495.github.io/</id>
 <author>
   <name>Sebastian Nielsen</name>
   <uri>https://sebastian3495.github.io/</uri>
   <email>sebastiangrundet@hotmail.dk</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[Sentiment analysis of Danish texts]]></title>
+ <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/Sentiment-Analysis/" />
+  <id>https://sebastian3495.github.io/Sentiment-Analysis</id>
+  <published>2018-03-16T00:00:00+01:00</published>
+  <updated>2018-03-16T00:00:00+01:00</updated>
+  <author>
+    <name>Sebastian Nielsen</name>
+    <uri>https://sebastian3495.github.io</uri>
+    <email>sebastiangrundet@hotmail.dk</email>
+  </author>
+  <content type="html">
+    &lt;h3 id=&quot;the-process-of-determining-the-emotional-tone-behind-a-series-of-words-used-to-gain-an-understanding-of-the-the-attitudes-opinions-and-emotions-weary-expressionless-smiley&quot;&gt;The process of determining the emotional tone behind a series of words, used to gain an understanding of the the attitudes, opinions and emotions :weary: :expressionless: :smiley:&lt;/h3&gt;
+
+&lt;p&gt;Sentiment analysis — also known as opnion mining — is as simple as assigning each word in a text a value based on the bias 
+of the word, after which the overall tone is decided of the text.
+&lt;br /&gt;
+This is especially useful for larger companies, who wish to gain an insight in their customers opionions regarding a certain topic.
+However, it could also be used as a tool for students analysing a Danish text, as it can help to quickly locate all positively or
+negatively charged words.&lt;/p&gt;
+
+&lt;!-- more --&gt;
+&lt;!--more--&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
+Although this so called wordlist-based approach has its flows — as it fails to identify sarcasm or passive aggresivness. 
+It is better suited for formal language; However that said, it is still an execellent tool.&lt;/p&gt;
+
+&lt;p&gt;In this post we’ll be using the &lt;code class=&quot;highlighter-rouge&quot;&gt;afinn&lt;/code&gt; package, as it supports the Danish language, although when it comes to English, &lt;code class=&quot;highlighter-rouge&quot;&gt;textblob&lt;/code&gt; is
+the preffered choice.
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Anyways! We start off by instantiating an instance of the Afinn object, followed by a namedtuple that is going to require 3 values,
+the polarity score of the word; the word itself; and the line number at which the word is located.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;afinn&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Afinn&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;# https://github.com/fnielsen/afinn   &lt;/span&gt;
+&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;collections&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;namedtuple&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;afinn&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Afinn&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;language&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'da'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;emoticons&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;ScoreTuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;namedtuple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ScoreTuple'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'score word line'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Getting the sentiment score of a text is straight forward. It is worth taking into account, that it’s a good idea
+to clean the text from “special characters” before analysing it, as it might cause some troubles in the analysis
+to for instance analyse a word such as: “extraordinary..?”.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;clean_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+	&lt;span class=&quot;s&quot;&gt;'''Cleans the text from characters such as , . ! ? '''&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;chars_to_clean&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;','&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'.'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'!'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'?'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chars_to_clean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+		&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;
+
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sentiment_score_of_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;show_score&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clean_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;c&quot;&gt;# Clean the text&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;score&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;afinn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;score&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;  &lt;span class=&quot;c&quot;&gt;# Get the score of the text&lt;/span&gt;
+	
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;show_score&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+		&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;The text's score is: {score}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+		
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;score&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Let’s test the functions on the following text:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;          &lt;span class=&quot;c&quot;&gt;# A text with an overall positive attitude&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;Dette er en dansk tekst, fyldt med positive og gode ord. Der er dog nogle dårlige og knap så
+             gode ord ind i mellem. Men overordnet set er teksten positivt ladet med fantastiske himmerigske ord.&quot;&quot;&quot;&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sentiment_score_of_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;The text's score is: 5.0&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;A higher score is equal to a higher confidence in that the text is positive, meanwhile a lower score is equal to a higher confidence
+in that the text is conveying a negative sentiment. Now, let’s take a closer look at each word individually.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sentiment_score_of_words&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ignore_neutral_words&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;show_analysis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clean_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;lineNr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;scores&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+	&lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\n&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)]&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lines&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+	    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;line&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;strip&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;' '&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+	        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ignore_neutral_words&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;afinn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;score&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+	            &lt;span class=&quot;k&quot;&gt;continue&lt;/span&gt;
+	        &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+	            &lt;span class=&quot;n&quot;&gt;scores&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ScoreTuple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;afinn&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;score&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;word&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lineNr&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+	    &lt;span class=&quot;n&quot;&gt;lineNr&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;show_analysis&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+	    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;nTuple&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;sorted&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;scores&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;reverse&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+	        &lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;f&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;{nTuple.score} &lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;{nTuple.word}&lt;/span&gt;&lt;span class=&quot;se&quot;&gt;\&quot;&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;, linje: {nTuple.line}&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;scores&lt;/span&gt;
+	
+    &lt;span class=&quot;c&quot;&gt;# We set the ignore_neutral_words argument to True, &lt;/span&gt;
+    &lt;span class=&quot;c&quot;&gt;# as we do not want to print out the neutral words&lt;/span&gt;
+&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;sentiment_score_of_words&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ignore_neutral_words&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;s&quot;&gt;&quot;&quot;&quot;
+4.0 &quot;fantastiske&quot;, linje: 2
+2.0 &quot;positivt&quot;, linje: 2
+2.0 &quot;positive&quot;, linje: 1
+-3.0 &quot;dårlige&quot;, linje: 1
+&quot;&quot;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Not surprisingly, we do not have a lot of words affecting our total text score. &lt;br /&gt; You can get the full code &lt;a href=&quot;https://gist.github.com/Sebastian-Nielsen/1cbb695423768d96e024333f1144d0e4&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h4 id=&quot;other-examples-of-sentiment-analysis&quot;&gt;Other examples of sentiment analysis.&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;a href=&quot;https://finnaarupnielsen.wordpress.com/2013/01/09/more-on-automated-sentiment-analysis-of-danis/&quot;&gt;Sentiment analysis of Danish politicians on Wikipedia&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev.to/rodolfoferro/sentiment-analysis-on-trumpss-tweets-using-python-&quot;&gt;Sentiment analysis on Trump’s tweets&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;a href=&quot;https://dev.to/lornamariak/exploring-sentiment-analysis-o6j&quot;&gt;Exploring sentiment analysis as an application of text mining&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/Sentiment-Analysis/&quot;&gt;Sentiment analysis of Danish texts&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen's Blog&lt;/a&gt; on March 16, 2018.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>
@@ -40,6 +159,9 @@
 This should only take about 5 minutes. Get your keys, secrets, and token and fill out the required fields in the script.&lt;/p&gt;
 
 &lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;!-- more --&gt;
+&lt;!--more--&gt;
 
 &lt;h4 id=&quot;python-3x------github-gist&quot;&gt;Python 3.x              &lt;a target=&quot;_blank&quot; href=&quot;https://gist.github.com/Sebastian-Nielsen/f57244bad3882b0232c04ef4c775cb29&quot;&gt;GitHub gist&lt;/a&gt;&lt;/h4&gt;
 
@@ -109,7 +231,7 @@ Which obviously is something you would not want to happen.&lt;/p&gt;
 &lt;p&gt;That said, you are free to do whatever you want with the code. Good luck!  :four_leaf_clover::four_leaf_clover:&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/bots/Twitter-contest-joiner-bot/&quot;&gt;Twitter contest joiner bot&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on March 09, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/bots/Twitter-contest-joiner-bot/&quot;&gt;Twitter contest joiner bot&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen's Blog&lt;/a&gt; on March 09, 2018.&lt;/p&gt;
   </content>
 </entry>
 
@@ -142,7 +264,7 @@ du kan læse mere om på VøBot’s hjemmeside: &lt;br /&gt;&lt;a id=&quot;VøBo
 &lt;img src=&quot;https://sebastian3495.github.io/images/P_voebot/gui.PNG&quot; width=&quot;350px;&quot; /&gt;&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/V%C3%B8Bot/&quot;&gt;VøBot&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on March 05, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/V%C3%B8Bot/&quot;&gt;VøBot&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen's Blog&lt;/a&gt; on March 05, 2018.&lt;/p&gt;
   </content>
 </entry>
 
@@ -189,7 +311,7 @@ REM  --&amp;gt; Check for permissions
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/Spotify-ads/&quot;&gt;Disable spotify ads&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on March 05, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/Spotify-ads/&quot;&gt;Disable spotify ads&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen's Blog&lt;/a&gt; on March 05, 2018.&lt;/p&gt;
   </content>
 </entry>
 
@@ -223,7 +345,7 @@ Proceed to log onto your social medias account in the order the script tells you
 &lt;h1 id=&quot;feeling-generous--heart&quot;&gt;Feeling generous ? :heart:&lt;/h1&gt;
 &lt;p&gt;&lt;a href=&quot;https://www.paypal.com/cgi-bin/webscr?cmd=_donations&amp;amp;business=DFPZMAKFDBBPA&amp;amp;lc=US&amp;amp;item_name=Sebastian%20A%20B%20Nielsen&amp;amp;no_note=0&amp;amp;cn=Tilf%c3%b8j%20en%20besked%20til%20s%c3%a6lgeren%3a&amp;amp;no_shipping=2&amp;amp;currency_code=DKK&amp;amp;bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted&quot;&gt;&lt;img src=&quot;https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif&quot; alt=&quot;paypal&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/bots/Kingdomlikes-bot/&quot;&gt;KingdomLikes Bot&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on March 05, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/bots/Kingdomlikes-bot/&quot;&gt;KingdomLikes Bot&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen's Blog&lt;/a&gt; on March 05, 2018.&lt;/p&gt;
   </content>
 </entry>
 
@@ -384,7 +506,7 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
 
 &lt;p&gt;The image must be in the &lt;code class=&quot;highlighter-rouge&quot;&gt;/images&lt;/code&gt; folder.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/sample-math/&quot;&gt;Sample Math&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on December 02, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/sample-math/&quot;&gt;Sample Math&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen's Blog&lt;/a&gt; on December 02, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -461,7 +583,7 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
   &lt;/ol&gt;
 &lt;/div&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/code-highlighting-post/&quot;&gt;Syntax Highlighting Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on December 01, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/code-highlighting-post/&quot;&gt;Syntax Highlighting Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen's Blog&lt;/a&gt; on December 01, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -484,7 +606,7 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
 
 &lt;p&gt;on your post. This theme adds a dark background with a white panel to show your content.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/dark-post/&quot;&gt;Dark Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on November 30, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/dark-post/&quot;&gt;Dark Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen's Blog&lt;/a&gt; on November 30, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -512,7 +634,7 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
 
 &lt;div xmlns:cc=&quot;http://creativecommons.org/ns#&quot; xmlns:dct=&quot;http://purl.org/dc/terms/&quot; about=&quot;http://subtlepatterns.com&quot; class=&quot;notice&quot;&gt;Background images from &lt;span property=&quot;dct:title&quot;&gt;Subtle Patterns&lt;/span&gt; (&lt;a rel=&quot;cc:attributionURL&quot; property=&quot;cc:attributionName&quot; href=&quot;http://subtlepatterns.com&quot;&gt;Subtle Patterns&lt;/a&gt;) / &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;&gt;CC BY-SA 3.0&lt;/a&gt;&lt;/div&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/image/background-image/&quot;&gt;Post with a Background Image&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on November 29, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/image/background-image/&quot;&gt;Post with a Background Image&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen's Blog&lt;/a&gt; on November 29, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -531,7 +653,7 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
   <content type="html">
     &lt;p&gt;This theme supports &lt;strong&gt;link posts&lt;/strong&gt;, made famous by John Gruber. To use, just add &lt;code class=&quot;highlighter-rouge&quot;&gt;link: http://url-you-want-linked&lt;/code&gt; to the post’s YAML front matter and you’re done.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/sample-link-post/&quot;&gt;Sample Link Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on November 28, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/sample-link-post/&quot;&gt;Sample Link Post&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen's Blog&lt;/a&gt; on November 28, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -559,7 +681,7 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
 {:/nomarkdown}&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/video-post/&quot;&gt;A Post with a Video&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on November 27, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/intro/video-post/&quot;&gt;A Post with a Video&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen's Blog&lt;/a&gt; on November 27, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -674,7 +796,7 @@ Available values: [1..3].&lt;/li&gt;
 &lt;/figure&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/sample/intro/sample-post-images/&quot;&gt;A Post with Images&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen Blog&lt;/a&gt; on November 26, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/sample/intro/sample-post-images/&quot;&gt;A Post with Images&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen's Blog&lt;/a&gt; on November 26, 2016.&lt;/p&gt;
   </content>
 </entry>
 
