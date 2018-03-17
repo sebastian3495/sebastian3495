@@ -1,0 +1,62 @@
+input[type=text],input[type=email],input[type=phone],input[type=password],input[type=number],input[type=search],textarea {
+    background: #e6e6e6;
+    padding: 5px;
+    outline: none;
+    border: none;
+    height: 44px;
+    width: 300px;
+    margin-bottom: .5rem
+	font: 400 13.3333px Arial;
+
+}
+
+input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+input[type=email], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+}
+
+textarea {
+	height: 100px;
+	cursor: text;
+	word-wrap: break-word;
+	white-space. pre-wrap;
+	resize: auto;
+}
+
+form {
+	background-color: #fff;
+    margin-bottom: 40px
+}
+
+form .field {
+    margin-bottom: 20px
+}
+
+form .note {
+    margin-top: 5px;
+    color: gray
+}
+
+form .req {
+    font-style: italic
+}
+
+.full-width {
+	background-color: #a3d3h3;
+}

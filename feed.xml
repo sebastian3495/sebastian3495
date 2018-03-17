@@ -4,7 +4,7 @@
 <generator uri="https://github.com/mojombo/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://sebastian3495.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="https://sebastian3495.github.io" />
-<updated>2018-03-16T09:46:24+01:00</updated>
+<updated>2018-03-17T18:43:37+01:00</updated>
 <id>https://sebastian3495.github.io/</id>
 <author>
   <name>Sebastian Nielsen</name>
@@ -14,9 +14,9 @@
 
 
 <entry>
-  <title type="html"><![CDATA[Sentiment analysis of Danish texts]]></title>
- <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/Sentiment-Analysis/" />
-  <id>https://sebastian3495.github.io/Sentiment-Analysis</id>
+  <title type="html"><![CDATA[Sentiment analysis of Danish texts (wordlist)]]></title>
+ <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/data%20science/Sentiment-Analysis/" />
+  <id>https://sebastian3495.github.io/data%20science/Sentiment-Analysis</id>
   <published>2018-03-16T00:00:00+01:00</published>
   <updated>2018-03-16T00:00:00+01:00</updated>
   <author>
@@ -27,8 +27,8 @@
   <content type="html">
     &lt;h3 id=&quot;the-process-of-determining-the-emotional-tone-behind-a-series-of-words-used-to-gain-an-understanding-of-the-the-attitudes-opinions-and-emotions-weary-expressionless-smiley&quot;&gt;The process of determining the emotional tone behind a series of words, used to gain an understanding of the the attitudes, opinions and emotions :weary: :expressionless: :smiley:&lt;/h3&gt;
 
-&lt;p&gt;Sentiment analysis — also known as opnion mining — is as simple as assigning each word in a text a value based on the bias 
-of the word, after which the overall tone is decided of the text.
+&lt;p&gt;Sentiment analysis — also known as opinion mining — is as simple as assigning each word in a text a value based on the bias 
+of the word, after which the overall sentiment is decided by summarizing the values.
 &lt;br /&gt;
 This is especially useful for larger companies, who wish to gain an insight in their customers opionions regarding a certain topic.
 However, it could also be used as a tool for students analysing a Danish text, as it can help to quickly locate all positively or
@@ -37,11 +37,13 @@ negatively charged words.&lt;/p&gt;
 &lt;!-- more --&gt;
 &lt;!--more--&gt;
 
-&lt;p&gt;&lt;br /&gt;&lt;br /&gt;
-Although this so called wordlist-based approach has its flows — as it fails to identify sarcasm or passive aggresivness. 
-It is better suited for formal language; However that said, it is still an execellent tool.&lt;/p&gt;
+&lt;p&gt;In this post we will be analysing a Danish text with a wordlist-based approach using &lt;a href=&quot;https://github.com/fnielsen/afinn&quot;&gt;AFINN&lt;/a&gt;;
+although this so called wordlist-based approach has its flaws, as it fails to identify eg. sarcasm. It is a very naive approach and is 
+therefore better suited for text consiting of simple sentences or formal language. For more complex sentences a better choice would 
+involve &lt;a href=&quot;https://www.nltk.org/&quot;&gt;training a model&lt;/a&gt;, which calculates the polarity by forming a relationship between the words. 
+However that said, it is still an execellent tool and extremely useful in certain scenarios.&lt;/p&gt;
 
-&lt;p&gt;In this post we’ll be using the &lt;code class=&quot;highlighter-rouge&quot;&gt;afinn&lt;/code&gt; package, as it supports the Danish language, although when it comes to English, &lt;code class=&quot;highlighter-rouge&quot;&gt;textblob&lt;/code&gt; is
+&lt;p&gt;We will be using the &lt;code class=&quot;highlighter-rouge&quot;&gt;afinn&lt;/code&gt; package, as it supports the Danish language, although when it comes to English, &lt;code class=&quot;highlighter-rouge&quot;&gt;textblob&lt;/code&gt; is
 the preffered choice.
 &lt;br /&gt;&lt;/p&gt;
 
@@ -54,8 +56,8 @@ the polarity score of the word; the word itself; and the line number at which th
 &lt;span class=&quot;n&quot;&gt;ScoreTuple&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;namedtuple&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'ScoreTuple'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;'score word line'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Getting the sentiment score of a text is straight forward. It is worth taking into account, that it’s a good idea
-to clean the text from “special characters” before analysing it, as it might cause some troubles in the analysis
-to for instance analyse a word such as: “extraordinary..?”.&lt;/p&gt;
+to clean the text from “special characters” before analysing it, as it might cause some troubles to for instance
+ analyse a word such as: “extraordinary..?”.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;clean_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
 	&lt;span class=&quot;s&quot;&gt;'''Cleans the text from characters such as , . ! ? '''&lt;/span&gt;
@@ -63,7 +65,6 @@ to for instance analyse a word such as: “extraordinary..?”.&lt;/p&gt;
 	&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;c&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chars_to_clean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
 		&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;''&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 	&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;
-
 
 &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sentiment_score_of_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;show_score&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
 	&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clean_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;    &lt;span class=&quot;c&quot;&gt;# Clean the text&lt;/span&gt;
@@ -84,7 +85,8 @@ to for instance analyse a word such as: “extraordinary..?”.&lt;/p&gt;
 &lt;span class=&quot;s&quot;&gt;&quot;The text's score is: 5.0&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;A higher score is equal to a higher confidence in that the text is positive, meanwhile a lower score is equal to a higher confidence
-in that the text is conveying a negative sentiment. Now, let’s take a closer look at each word individually.&lt;/p&gt;
+in that the text is conveying a negative sentiment. &lt;br /&gt;
+Now, let’s take a closer look at each word individually.&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python&quot; data-lang=&quot;python&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;sentiment_score_of_words&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ignore_neutral_words&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;show_analysis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
 	&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;clean_text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -117,9 +119,11 @@ in that the text is conveying a negative sentiment. Now, let’s take a closer l
 -3.0 &quot;dårlige&quot;, linje: 1
 &quot;&quot;&quot;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
-&lt;p&gt;Not surprisingly, we do not have a lot of words affecting our total text score. &lt;br /&gt; You can get the full code &lt;a href=&quot;https://gist.github.com/Sebastian-Nielsen/1cbb695423768d96e024333f1144d0e4&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;Not surprisingly, we only have a few words affecting our total text polarity score. &lt;br /&gt;
+But there you have it, a simple sentiment analysis using a wordlist-based approach.
+&lt;br /&gt; You can get the full code &lt;a href=&quot;https://gist.github.com/Sebastian-Nielsen/1cbb695423768d96e024333f1144d0e4&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;h4 id=&quot;other-examples-of-sentiment-analysis&quot;&gt;Other examples of sentiment analysis.&lt;/h4&gt;
+&lt;h4 id=&quot;other-examples-of-sentiment-analyses&quot;&gt;Other examples of sentiment analyses:&lt;/h4&gt;
 &lt;ul&gt;
   &lt;li&gt;&lt;a href=&quot;https://finnaarupnielsen.wordpress.com/2013/01/09/more-on-automated-sentiment-analysis-of-danis/&quot;&gt;Sentiment analysis of Danish politicians on Wikipedia&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://dev.to/rodolfoferro/sentiment-analysis-on-trumpss-tweets-using-python-&quot;&gt;Sentiment analysis on Trump’s tweets&lt;/a&gt;&lt;/li&gt;
@@ -127,7 +131,7 @@ in that the text is conveying a negative sentiment. Now, let’s take a closer l
 &lt;/ul&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/Sentiment-Analysis/&quot;&gt;Sentiment analysis of Danish texts&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen's Blog&lt;/a&gt; on March 16, 2018.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/data%20science/Sentiment-Analysis/&quot;&gt;Sentiment analysis of Danish texts (wordlist)&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen's Blog&lt;/a&gt; on March 16, 2018.&lt;/p&gt;
   </content>
 </entry>
 
@@ -283,7 +287,8 @@ du kan læse mere om på VøBot’s hjemmeside: &lt;br /&gt;&lt;a id=&quot;VøBo
   </author>
   <content type="html">
     &lt;p&gt;Spotify is coded in such a way that it will keep playing music, if it can’t gaing access to an ad. This script  redirects all Spotify’s requests 
-to the address &lt;code class=&quot;highlighter-rouge&quot;&gt;0.0.0.0&lt;/code&gt; at which there is no ad resources located. That’s all there is it to. Enjoy the music! :musical_note::musical_note::musical_note:&lt;/p&gt;
+to the address &lt;code class=&quot;highlighter-rouge&quot;&gt;0.0.0.0&lt;/code&gt; at which there is no ad resources located; thus Spotify will never be able to reach and play an ad.
+&lt;br /&gt;That’s all there is it to. Enjoy the music! :musical_note::musical_note::musical_note:&lt;/p&gt;
 
 &lt;div&gt;&lt;a href=&quot;https://gist.github.com/Sebastian-Nielsen/5480aa6c0775e7a4604ee34bdd17416c&quot; class=&quot;btn btn-success&quot;&gt;Get the code&lt;/a&gt;&lt;/div&gt;
 
@@ -613,8 +618,8 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
 
 <entry>
   <title type="html"><![CDATA[Post with a Background Image]]></title>
- <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/image/background-image/" />
-  <id>https://sebastian3495.github.io/image/background-image</id>
+ <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/background-image/" />
+  <id>https://sebastian3495.github.io/background-image</id>
   <published>2016-11-29T00:00:00+01:00</published>
   <updated>2016-11-29T00:00:00+01:00</updated>
   <author>
@@ -634,7 +639,7 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
 
 &lt;div xmlns:cc=&quot;http://creativecommons.org/ns#&quot; xmlns:dct=&quot;http://purl.org/dc/terms/&quot; about=&quot;http://subtlepatterns.com&quot; class=&quot;notice&quot;&gt;Background images from &lt;span property=&quot;dct:title&quot;&gt;Subtle Patterns&lt;/span&gt; (&lt;a rel=&quot;cc:attributionURL&quot; property=&quot;cc:attributionName&quot; href=&quot;http://subtlepatterns.com&quot;&gt;Subtle Patterns&lt;/a&gt;) / &lt;a rel=&quot;license&quot; href=&quot;http://creativecommons.org/licenses/by-sa/3.0/&quot;&gt;CC BY-SA 3.0&lt;/a&gt;&lt;/div&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/image/background-image/&quot;&gt;Post with a Background Image&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen's Blog&lt;/a&gt; on November 29, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/background-image/&quot;&gt;Post with a Background Image&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen's Blog&lt;/a&gt; on November 29, 2016.&lt;/p&gt;
   </content>
 </entry>
 
@@ -688,8 +693,8 @@ m dolor sit amet, test link adipiscing elit. &lt;strong&gt;This is strong&lt;/st
 
 <entry>
   <title type="html"><![CDATA[A Post with Images]]></title>
- <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/sample/intro/sample-post-images/" />
-  <id>https://sebastian3495.github.io/sample/intro/sample-post-images</id>
+ <link rel="alternate" type="text/html" href="https://sebastian3495.github.io/sample-post-images/" />
+  <id>https://sebastian3495.github.io/sample-post-images</id>
   <published>2016-11-26T00:00:00+01:00</published>
   <updated>2016-11-26T00:00:00+01:00</updated>
   <author>
@@ -796,7 +801,7 @@ Available values: [1..3].&lt;/li&gt;
 &lt;/figure&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/sample/intro/sample-post-images/&quot;&gt;A Post with Images&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen's Blog&lt;/a&gt; on November 26, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;https://sebastian3495.github.io/sample-post-images/&quot;&gt;A Post with Images&lt;/a&gt; was originally published by Sebastian Nielsen at &lt;a href=&quot;https://sebastian3495.github.io&quot;&gt;Sebastian Nielsen's Blog&lt;/a&gt; on November 26, 2016.&lt;/p&gt;
   </content>
 </entry>
 
