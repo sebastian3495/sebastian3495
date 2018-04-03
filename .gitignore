@@ -7,3 +7,10 @@ node_modules
 Gemfile.lock
 .sass-cache
 *.gem
+_posts/2016-11-26-sample-post-images.md
+_posts/2016-11-27-video-post.md
+_posts/2016-11-26-sample-link-post.md
+_posts/2016-11-26-background-image.md
+_posts/2016-11-26-sample-math.md
+_posts/2016-11-26-codehighligthing-post.md
+_posts/2016-11-26-dark-post.md

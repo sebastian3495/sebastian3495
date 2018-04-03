@@ -8,6 +8,7 @@ tags: ["Python", "NLP"]
 image:
     feature: P_Text-summarizer/summarize.png
 ---
+Are you tired of having to read through all of the crap in an article? Ever wished that you could get rid 
 Have you ever been given the task to read a long article and wished that a summary of it existed, so that you wouldn't 
 have to read the whole god damn article? Well, you will soon be able to generate summaries in a matter of seconds..  
 
@@ -34,7 +35,7 @@ We usually remove stop words from the text as knowing their frequency does not h
 is important or not.
 
 <div id="centerbox" >
-  <h5>Hover the text to filter out stop words</h5>
+  <h5>Hover the text to see the stop words disappear</h5>
   <article class="highlight interactive">
     <p>
 		<span>Greed</span> has <span>poisoned</span> <span>men's</span> <span>souls,</span> has <span>barricaded</span> the <span>world</span> with <span>hate,</span> has <span>goose</span> <span>stepped</span> <span>us</span> into <span>misery</span> and <span>bloodshed.</span> <span>We</span> have <span>developed</span> <span>speed,</span> but we have <span>shut</span> ourselves in. <span>Machinery</span> that <span>gives</span> <span>abundance</span> has <span>left</span> <span>us</span> in <span>want.</span> <span>Our</span> <span>knowledge</span> has <span>made</span> <span>us</span> <span>cynical.</span>   
