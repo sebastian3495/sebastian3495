@@ -1,3 +1,0 @@
-set JEKLL_ENV=production
-
-bundle exec jekyll build
